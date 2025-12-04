@@ -1,0 +1,33 @@
+/* ============================================
+   VARIABLES SCSS - SALIKHINA WA SALIKHATE
+   ============================================ */
+
+/* Couleurs principales */
+:root {
+  --color-bg: #f8fafc;
+  --color-primary: #065f46;
+  --color-secondary: #fbbf24;
+  --color-text: #1f2937;
+  --color-logo-bg: #fef9f0;
+  --color-logo-text: #064e3b;
+  
+  /* Polices */
+  --font-logo-fr: 'Playfair Display', serif;
+  --font-logo-ar: 'Amiri', serif;
+  --font-heading: 'Playfair Display', 'Cinzel', serif;
+  --font-body: 'Playfair Display', sans-serif;
+  --font-arabic: 'Amiri', serif;
+  
+  /* Espacements */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+

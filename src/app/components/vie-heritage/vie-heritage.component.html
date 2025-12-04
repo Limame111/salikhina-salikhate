@@ -1,0 +1,89 @@
+<div class="vie-heritage-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Vie et Héritage
+      </h1>
+      <p class="hero-subtitle">L'héritage spirituel de Cheikhna Mouhamed Vadle</p>
+      <p class="hero-subtitle-arabic notranslate" translate="no">إرث شيخنا محمد وادلي الروحي</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="page-content">
+    <!-- Introduction Section -->
+    <section class="introduction-section">
+      <div class="introduction-card">
+        <h2 class="section-title">Un Héritage Précieux</h2>
+        <div class="introduction-content">
+          <p class="introduction-text">
+            L'héritage de Cheikhna Mouhamed Vadle (روحي) est un trésor spirituel qui continue de briller 
+            à travers les générations. Sa vie exemplaire, ses enseignements profonds et sa baraka 
+            constituent un guide éternel pour tous ceux qui cherchent à se rapprocher d'Allah.
+          </p>
+          <p class="introduction-text arabic-text notranslate" translate="no">
+            إرث شيخنا محمد وادلي (روحي) كنز روحي يستمر في التألق عبر الأجيال. حياته المثالية، 
+            تعاليمه العميقة وبركته تشكل دليلاً أبدياً لكل من يسعى للتقرب من الله.
+          </p>
+          <p class="introduction-text">
+            Cet héritage se perpétue aujourd'hui à travers ses descendants spirituels et biologiques, 
+            qui portent avec dévotion le flambeau de la guidance et continuent de transmettre 
+            la lumière de la voie spirituelle.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Heritage Sections -->
+    <section class="heritage-sections">
+      <h2 class="section-title">Les Piliers de l'Héritage</h2>
+      <div class="heritage-grid">
+        @for (section of heritageSections; track $index) {
+          <div class="heritage-card">
+            <h3 class="heritage-title">{{ section.title }}</h3>
+            <p class="heritage-title-arabic notranslate" translate="no">{{ section.titleAr }}</p>
+            <p class="heritage-description">{{ section.description }}</p>
+            <p class="heritage-description-arabic notranslate" translate="no">{{ section.descriptionAr }}</p>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Citations Section -->
+    <section class="citations-section">
+      <h2 class="section-title">Paroles de Lumière</h2>
+      <div class="citations-grid">
+        @for (citation of citations; track $index) {
+          <div class="citation-card">
+            <p class="citation-french">{{ citation.fr }}</p>
+            <p class="citation-arabic notranslate" translate="no">{{ citation.ar }}</p>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Transmission Section -->
+    <section class="transmission-section">
+      <div class="transmission-content">
+        <h2 class="section-title">La Transmission Continue</h2>
+        <p class="transmission-text">
+          L'héritage de Cheikhna ne s'arrête pas avec le temps. Il se transmet de cœur à cœur, 
+          de génération en génération, créant une chaîne spirituelle ininterrompue qui relie 
+          les pieux d'hier, d'aujourd'hui et de demain.
+        </p>
+        <p class="transmission-text-arabic notranslate" translate="no">
+          إرث شيخنا لا يتوقف مع الزمن. ينتقل من قلب إلى قلب، من جيل إلى جيل، 
+          مكوناً سلسلة روحية متصلة تربط الصالحين بالأمس واليوم وغداً.
+        </p>
+        <p class="transmission-closing">
+          Que cet héritage continue de guider et d'élever les âmes vers Allah.
+        </p>
+        <p class="transmission-closing-arabic notranslate" translate="no">
+          ليواصل هذا الإرث توجيه ورفع الأرواح إلى الله.
+        </p>
+      </div>
+    </section>
+  </div>
+</div>
+

@@ -1,0 +1,22 @@
+<div class="typewriter-container">
+  <div class="quote-wrapper">
+    <p 
+      class="quote-french" 
+      [class.fade-in]="!isTyping() && displayedFrench().length > 0"
+      [class.notranslate]="isTyping() || isTypingArabic()"
+      [attr.translate]="(isTyping() || isTypingArabic()) ? 'no' : null"
+    >
+      <span class="text-content" [class.notranslate]="isTyping() || isTypingArabic()" [attr.translate]="(isTyping() || isTypingArabic()) ? 'no' : null">{{ displayedFrench() }}</span>
+      <span class="cursor" *ngIf="isTyping() && !isTypingArabic()" [style.opacity]="showCursor() ? '1' : '0'">|</span>
+    </p>
+    <p 
+      class="quote-arabic notranslate" 
+      translate="no"
+      [class.fade-in]="!isTyping() && displayedArabic().length > 0"
+    >
+      <span class="text-content notranslate" translate="no">{{ displayedArabic() }}</span>
+      <span class="cursor" *ngIf="isTypingArabic()" [style.opacity]="showCursor() ? '1' : '0'">|</span>
+    </p>
+  </div>
+</div>
+

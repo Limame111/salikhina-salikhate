@@ -1,0 +1,7 @@
+@use '../../../styles/variables' as *;
+
+.main-content {
+  min-height: calc(100vh - 200px);
+  background-color: var(--color-bg);
+}
+

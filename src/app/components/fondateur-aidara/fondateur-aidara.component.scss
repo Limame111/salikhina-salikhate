@@ -1,0 +1,246 @@
+@use '../../../styles/variables' as *;
+
+.fondateur-aidara-container {
+  background: linear-gradient(to bottom, #f8fafc 0%, #f0fdf4 100%);
+  min-height: 100vh;
+}
+
+.hero-section {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    height: 80vh;
+  }
+}
+
+.hero-image-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+
+  @media (max-width: 1024px) {
+    font-size: 4rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 3rem;
+  color: #fbbf24;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin-top: 1.5rem;
+  font-weight: 600;
+
+  @media (max-width: 1024px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+}
+
+.presentation-section {
+  padding: 5rem 1.5rem;
+  background: #f8fafc;
+}
+
+.presentation-content {
+  max-width: 4xl;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 2.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.presentation-text {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: #374151;
+  margin-bottom: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+.message-section {
+  padding: 4rem 1.5rem;
+  background: linear-gradient(to bottom, #f0fdf4 0%, #f8fafc 100%);
+}
+
+.message-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 4rem 3rem;
+  border-radius: 16px;
+  border: 2px solid #fbbf24;
+  box-shadow: 0 10px 40px rgba(6, 95, 70, 0.1);
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 3rem 2rem;
+  }
+}
+
+.quote-icon {
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  color: #fbbf24;
+  line-height: 1;
+  position: absolute;
+  opacity: 0.3;
+
+  &:first-child {
+    top: 1rem;
+    left: 2rem;
+  }
+
+  &.closing {
+    bottom: 1rem;
+    right: 2rem;
+    transform: rotate(180deg);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 4rem;
+
+    &:first-child {
+      top: 0.5rem;
+      left: 1rem;
+    }
+
+    &.closing {
+      bottom: 0.5rem;
+      right: 1rem;
+    }
+  }
+}
+
+.message-text {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #065f46;
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.cta-section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  background: #f8fafc;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #065f46;
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 1.5rem 3rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(6, 95, 70, 0.3);
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: #fbbf24;
+    color: #065f46;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(6, 95, 70, 0.4);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+    padding: 1.25rem 2.5rem;
+  }
+}
+

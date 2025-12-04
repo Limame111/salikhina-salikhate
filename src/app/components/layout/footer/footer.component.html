@@ -1,0 +1,58 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <!-- Section Logo et Description -->
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img
+            src="/img/amiral.png"
+            alt="Salikhina wa Salikhate"
+            class="footer-logo-image notranslate"
+            translate="no"
+          />
+          <span class="footer-logo-text notranslate font-logo-fr" translate="no">
+            Salikhina wa Salikhate
+          </span>
+        </div>
+        <p class="footer-description">
+          Mouvement spirituel dédié à la diffusion des enseignements et de la sagesse de Cheikhna
+          Cheikh Mouhamed Vadle.
+        </p>
+      </div>
+
+      <!-- Section Liens rapides -->
+      <div class="footer-section">
+        <h3 class="footer-title">Liens rapides</h3>
+        <ul class="footer-links">
+          @for (link of footerLinks; track link.path) {
+          <li>
+            <a [routerLink]="link.path" class="footer-link">
+              {{ link.label }}
+            </a>
+          </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Section Contact -->
+      <div class="footer-section">
+        <h3 class="footer-title">Contact</h3>
+        <ul class="footer-contact">
+          <li>
+            <a routerLink="/contact" class="footer-link"> Nous contacter </a>
+          </li>
+          <li>
+            <a routerLink="/adhesion" class="footer-link"> Rejoindre le mouvement </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © {{ currentYear }} Salikhina wa Salikhate. Tous droits réservés.
+      </p>
+    </div>
+  </div>
+</footer>
