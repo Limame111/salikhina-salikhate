@@ -16,10 +16,9 @@ export class HeaderComponent implements OnInit {
     { path: '', label: 'Accueil' },
     { path: '/fondateur', label: 'Le Fondateur' },
     { path: '/vie-et-heritage', label: 'Vie et héritage' },
-    { path: '/hassidas', label: 'Hassidas & Écrits' },
+    { path: '/hassidas-et-ecrits', label: 'Hassidas & Écrits' },
     { path: '/enseignements', label: 'Enseignements' },
     { path: '/evenements', label: 'Événements' },
-    { path: '/actualites', label: 'Actualités' },
     { path: '/adhesion', label: 'Adhésion' },
     { path: '/contact', label: 'Contact' }
   ];

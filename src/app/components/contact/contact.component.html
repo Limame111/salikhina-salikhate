@@ -1,5 +1,181 @@
-<div class="page-container">
-  <h1 class="page-title font-heading">Contact</h1>
-  <p class="page-content">Contenu à venir...</p>
-</div>
+<section class="min-h-screen bg-white py-20 relative">
+  <!-- Décoration de bienvenue -->
+  @if (showWelcome) {
+  <div
+    class="welcome-decoration fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-fadeIn"
+  >
+    <div
+      class="welcome-card bg-gradient-to-br from-[#065f46] via-[#fbbf24] to-[#065f46] rounded-3xl shadow-2xl p-12 max-w-md mx-4 text-center text-white relative overflow-hidden animate-slideUp"
+    >
+      <!-- Étoiles décoratives -->
+      <div class="absolute top-4 right-4 text-4xl animate-pulse">⭐</div>
+      <div class="absolute top-8 left-4 text-3xl animate-pulse delay-200">✨</div>
+      <div class="absolute bottom-8 right-8 text-3xl animate-pulse delay-400">🌟</div>
 
+      <!-- Contenu -->
+      <div class="relative z-10">
+        <div class="text-7xl mb-6 animate-bounce">🤲</div>
+        <h3 class="text-4xl font-bold mb-4" style="font-family: 'Amiri', serif">
+          بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+        </h3>
+        <p class="text-2xl mb-2">Assalamu alaykum</p>
+        <p class="text-xl mb-6 opacity-90">Que la paix soit sur vous</p>
+        <div class="w-32 h-1 bg-white/30 mx-auto rounded-full mb-4"></div>
+        <p class="text-lg opacity-80">Ouverture de votre application email...</p>
+      </div>
+    </div>
+  </div>
+  }
+
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- En-tête -->
+    <div class="text-center mb-20">
+      <h1 class="text-6xl md:text-8xl font-bold text-[#065f46] mb-8">Contactez-nous</h1>
+      <p class="text-3xl text-[#fbbf24] mb-4">Nous sommes là pour vous accompagner</p>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        N'hésitez pas à nous contacter pour toute question, demande d'information ou besoin
+        d'accompagnement spirituel
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-16">
+      <!-- Coordonnées principales -->
+      <div class="space-y-8">
+        <!-- WhatsApp -->
+        <div
+          class="bg-gradient-to-br from-[#065f46]/10 to-[#fbbf24]/10 rounded-3xl p-10 shadow-xl hover:shadow-2xl transition"
+        >
+          <div class="flex items-center mb-6">
+            <div class="text-5xl mr-4">📱</div>
+            <div>
+              <h3 class="text-3xl font-bold text-[#065f46] mb-2">WhatsApp</h3>
+              <p class="text-xl text-gray-700">Contactez-nous directement</p>
+            </div>
+          </div>
+          <a
+            href="https://wa.me/221771781892"
+            target="_blank"
+            class="inline-block w-full bg-[#065f46] hover:bg-[#fbbf24] text-white font-bold text-xl px-8 py-4 rounded-full text-center transition"
+          >
+            Ouvrir WhatsApp →
+          </a>
+        </div>
+
+        <!-- Email -->
+        <div
+          class="bg-gradient-to-br from-[#065f46]/10 to-[#fbbf24]/10 rounded-3xl p-10 shadow-xl hover:shadow-2xl transition"
+        >
+          <div class="flex items-center mb-6">
+            <div class="text-5xl mr-4">📧</div>
+            <div>
+              <h3 class="text-3xl font-bold text-[#065f46] mb-2">Email</h3>
+              <p class="text-xl text-gray-700">Pour les demandes écrites</p>
+            </div>
+          </div>
+          <a
+            (click)="openEmail()"
+            href="javascript:void(0)"
+            class="inline-block w-full bg-[#065f46] hover:bg-[#fbbf24] text-white font-bold text-xl px-8 py-4 rounded-full text-center transition cursor-pointer no-underline"
+          >
+            Envoyer un email →
+          </a>
+        </div>
+
+        <!-- Sections locales -->
+        <div class="bg-white rounded-3xl p-10 shadow-xl">
+          <h3 class="text-3xl font-bold text-[#065f46] mb-6">🕌 Nos sections</h3>
+          <div class="grid grid-cols-2 gap-4 text-lg">
+            <div class="flex items-center">
+              <span class="text-2xl mr-2">📍</span>
+              <span>Dakar</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-2xl mr-2">📍</span>
+              <span>Thiès</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-2xl mr-2">📍</span>
+              <span>Rufisque</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-2xl mr-2">📍</span>
+              <span>Mbour</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-2xl mr-2"></span>
+              <span></span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-2xl mr-2">📍</span>
+              <span>Ndande</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Informations supplémentaires -->
+      <div class="space-y-8">
+        <!-- Horaires Khadara -->
+        <div class="bg-gradient-to-br from-[#fbbf24]/20 to-[#065f46]/20 rounded-3xl p-10 shadow-xl">
+          <h3 class="text-3xl font-bold text-[#065f46] mb-6 flex items-center">
+            <span class="text-4xl mr-4">🕐</span>
+            Khadara du jeudi
+          </h3>
+          <p class="text-xl text-gray-700 mb-4">
+            Rejoignez-nous chaque jeudi soir pour des moments de dhikr, de prière et de partage
+            spirituel
+          </p>
+          <div class="space-y-2 text-lg text-gray-600">
+            <p>📍 <strong>Dakar</strong> - Jeudi soir</p>
+            <p>📍 <strong>Thiès</strong> - Jeudi soir</p>
+            <p>📍 <strong>Rufisque</strong> - Jeudi soir</p>
+            <p>📍 <strong>Mbour</strong> - Jeudi soir</p>
+            <p>📍 <strong>Ndande</strong> - Jeudi soir</p>
+          </div>
+        </div>
+
+        <!-- Événements -->
+        <div class="bg-white rounded-3xl p-10 shadow-xl">
+          <h3 class="text-3xl font-bold text-[#065f46] mb-6 flex items-center">
+            <span class="text-4xl mr-4">🌙</span>
+            Événements annuels
+          </h3>
+          <div class="space-y-4 text-lg text-gray-700">
+            <div class="flex items-start">
+              <span class="text-2xl mr-3">✨</span>
+              <div>
+                <p class="font-bold">Magal Cheikhna Cheikh Mouhamed Vadal</p>
+                <p class="text-gray-600">Chaque année à Darou Salam (Ndande)</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-2xl mr-3">❤️</span>
+              <div>
+                <p class="font-bold">Sant Cheikhna Cheikh Saadbouh</p>
+                <p class="text-gray-600">Chaque année à Rufisque</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Message d'invitation -->
+        <div
+          class="bg-gradient-to-r from-[#065f46] to-[#fbbf24] rounded-3xl p-10 shadow-2xl text-white text-center"
+        >
+          <h3 class="text-4xl font-bold mb-4">Rejoignez-nous !</h3>
+          <p class="text-xl mb-6">
+            Que vous soyez à la recherche de guidance spirituelle, d'une communauté bienveillante ou
+            simplement curieux de découvrir notre voie, vous êtes le bienvenu.
+          </p>
+          <a
+            href="https://wa.me/221771781892"
+            target="_blank"
+            class="inline-block bg-white text-[#065f46] font-bold text-xl px-10 py-4 rounded-full hover:scale-105 transition transform"
+          >
+            Nous contacter →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

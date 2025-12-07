@@ -1,0 +1,109 @@
+<section class="py-20 bg-gradient-to-b from-[#f8fafc] to-white">
+
+  <div class="max-w-7xl mx-auto px-6 text-center">
+
+    <h1 class="text-6xl md:text-8xl font-bold text-[#065f46] mb-8">
+
+      Hassidas & Écrits
+
+    </h1>
+
+    <p class="text-4xl text-[#fbbf24] mb-20">
+
+      Trésors poétiques des enfants de Cheikhna Cheikh Mouhamed Vadal
+
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- Galerie de hassidas en PDF – grille magnifique -->
+
+<section class="py-20 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+
+
+
+    @for (hassida of hassidas; track hassida.fileName) {
+
+    <div class="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-3xl transition duration-500">
+
+      <div class="h-96 bg-gradient-to-br from-[#065f46]/10 to-[#fbbf24]/10 flex items-center justify-center p-8">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" class="w-32 opacity-70">
+
+          <rect width="128" height="128" fill="#DC2626" rx="8"/>
+
+          <path d="M32 32h48v16h16v48H32V32z" fill="white" opacity="0.9"/>
+
+          <path d="M80 32v16h16" stroke="white" stroke-width="2" fill="none"/>
+
+          <text x="64" y="90" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">PDF</text>
+
+        </svg>
+
+      </div>
+
+      <div class="p-8 text-center">
+
+        <h3 class="text-2xl font-bold text-[#065f46] mb-4">
+
+          {{ hassida.title }}
+
+        </h3>
+
+        <p class="text-lg text-gray-600 mb-6">
+
+          {{ hassida.author || 'Hassida' }}
+
+        </p>
+
+        <div class="flex flex-col gap-3 items-center">
+
+          <a [href]="getPdfUrl(hassida.fileName)" target="_blank" 
+
+             class="bg-[#065f46] hover:bg-[#fbbf24] text-white px-6 py-3 rounded-full font-bold transition text-sm w-full max-w-[200px]">
+
+            Voir le PDF
+
+          </a>
+
+          <a [href]="getPdfUrl(hassida.fileName)" [download]="hassida.fileName" 
+
+             class="border-2 border-[#065f46] text-[#065f46] hover:bg-[#065f46] hover:text-white px-6 py-3 rounded-full font-bold transition text-sm w-full max-w-[200px]">
+
+            Télécharger
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    }
+
+  </div>
+
+
+
+  <div class="text-center mt-20">
+
+    <p class="text-2xl text-[#065f46] italic">
+
+      D'autres hassidas seront ajoutées régulièrement inchaAllah
+
+    </p>
+
+  </div>
+
+</div>
+
+</section>

@@ -2,12 +2,12 @@
   <div class="header-container">
     <!-- Logo et titre -->
     <a routerLink="/" class="logo-section" (click)="closeMenu()">
-      <img 
-        src="/img/amiral.png" 
-        alt="Salikhina wa Salikhate - الصالحين و الصالحات" 
+      <img
+        src="/img/amiral.png"
+        alt="Salikhina wa Salikhate - الصالحين و الصالحات"
         class="logo-image notranslate"
         translate="no"
-      >
+      />
       <span class="logo-text notranslate font-logo-fr" translate="no">
         Salikhina wa Salikhate
       </span>
@@ -17,21 +17,22 @@
     <nav class="desktop-menu" [class.hidden]="isMenuOpen()">
       <ul class="menu-list">
         @for (item of menuItems; track item.path) {
-          <li>
-            <a 
-              [routerLink]="item.path" 
-              routerLinkActive="active"
-              class="menu-link"
-            >
-              {{ item.label }}
-            </a>
-          </li>
+        <li>
+          <a
+            [routerLink]="item.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="item.path === '' ? { exact: true } : { exact: false }"
+            class="menu-link"
+          >
+            {{ item.label }}
+          </a>
+        </li>
         }
       </ul>
     </nav>
 
     <!-- Burger button -->
-    <button 
+    <button
       class="burger-button"
       (click)="toggleMenu()"
       [attr.aria-label]="isMenuOpen() ? 'Fermer le menu' : 'Ouvrir le menu'"
@@ -44,34 +45,26 @@
   </div>
 
   <!-- Drawer mobile -->
-  <div 
-    class="mobile-drawer"
-    [class.open]="isMenuOpen()"
-    (click)="closeMenu()"
-  >
+  <div class="mobile-drawer" [class.open]="isMenuOpen()" (click)="closeMenu()">
     <nav class="mobile-menu" (click)="$event.stopPropagation()">
       <ul class="mobile-menu-list">
         @for (item of menuItems; track item.path) {
-          <li>
-            <a 
-              [routerLink]="item.path" 
-              routerLinkActive="active"
-              class="mobile-menu-link"
-              (click)="closeMenu()"
-            >
-              {{ item.label }}
-            </a>
-          </li>
+        <li>
+          <a
+            [routerLink]="item.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="item.path === '' ? { exact: true } : { exact: false }"
+            class="mobile-menu-link"
+            (click)="closeMenu()"
+          >
+            {{ item.label }}
+          </a>
+        </li>
         }
       </ul>
     </nav>
   </div>
 
   <!-- Overlay -->
-  <div 
-    class="drawer-overlay"
-    [class.visible]="isMenuOpen()"
-    (click)="closeMenu()"
-  ></div>
+  <div class="drawer-overlay" [class.visible]="isMenuOpen()" (click)="closeMenu()"></div>
 </header>
-

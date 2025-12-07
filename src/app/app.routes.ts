@@ -22,6 +22,10 @@ export const routes: Routes = [
     loadComponent: () => import('./components/hassidas/hassida-detail.component').then(m => m.HassidaDetailComponent)
   },
   {
+    path: 'hassidas-et-ecrits',
+    loadComponent: () => import('./components/hassidas-ecrits/hassidas-ecrits.component').then(m => m.HassidasEcritsComponent)
+  },
+  {
     path: 'enseignements',
     loadComponent: () => import('./components/enseignements/enseignements.component').then(m => m.EnseignementsComponent)
   },

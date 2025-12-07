@@ -190,6 +190,74 @@
   }
 }
 
+.subsection-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: #065f46;
+  margin: 2rem 0 1.5rem;
+  font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+    margin: 1.5rem 0 1rem;
+  }
+}
+
+.prophetic-quote {
+  background: linear-gradient(135deg, #fef9f0 0%, rgba(251, 191, 36, 0.1) 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #fbbf24;
+  margin: 2rem 0;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+}
+
+.quote-text {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: #065f46;
+  line-height: 1.8;
+  font-style: italic;
+
+  strong {
+    color: #fbbf24;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+.blessings-list {
+  list-style: decimal;
+  list-style-position: inside;
+  margin: 2rem 0;
+  padding-left: 1rem;
+}
+
+.blessing-item {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #374151;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
 .prodigy-details {
   margin-bottom: 2rem;
   cursor: pointer;
@@ -446,6 +514,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
+  align-items: stretch;
 
   @media (max-width: 968px) {
     grid-template-columns: 1fr;
@@ -455,12 +524,15 @@
 
 .descendance-column {
   background: #f8fafc;
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
   @media (max-width: 768px) {
-    padding: 1.5rem;
+    padding: 2rem;
   }
 }
 
@@ -482,6 +554,121 @@
   font-size: 1.125rem;
   color: #374151;
   line-height: 1.6;
+  flex: 1;
+}
+
+.descendant-item {
+  margin-bottom: 0.75rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 3px solid #fbbf24;
+  transition: box-shadow 0.3s ease;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgba(6, 95, 70, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    min-height: 3rem;
+  }
+}
+
+.descendant-item-simple {
+  padding: 0.75rem 1rem;
+  cursor: default;
+
+  strong {
+    color: #065f46;
+    font-weight: 700;
+    display: block;
+    font-size: 1.125rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem 0.75rem;
+
+    strong {
+      font-size: 1rem;
+    }
+  }
+}
+
+.descendant-details {
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.descendant-summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 1.125rem;
+  color: #374151;
+  line-height: 1.6;
+  user-select: none;
+  padding: 0.75rem 1rem;
+  width: 100%;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::marker {
+    display: none;
+  }
+
+  &::before {
+    content: '▶';
+    display: inline-block;
+    margin-right: 0.5rem;
+    transition: transform 0.2s ease;
+    color: #fbbf24;
+    font-size: 0.75rem;
+  }
+
+  details[open] &::before {
+    transform: rotate(90deg);
+  }
+
+  strong {
+    color: #065f46;
+    font-weight: 700;
+    display: inline;
+  }
+
+  &:hover {
+    color: #065f46;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+details[open] .descendant-summary::before {
+  transform: rotate(90deg);
+}
+
+.descendant-children {
+  margin-top: 0.75rem;
+  padding-left: 1.5rem;
+  color: #374151;
+  line-height: 1.6;
+  font-size: 1rem;
+  border-left: 2px solid rgba(251, 191, 36, 0.3);
+  padding-left: 1rem;
+  margin-left: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    padding-left: 0.75rem;
+    margin-left: 0.25rem;
+  }
 }
 
 .final-section {
@@ -517,6 +704,100 @@
   @media (max-width: 768px) {
     font-size: 2.5rem;
     margin-top: 3rem;
+  }
+}
+
+// Section Héritage
+.heritage-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  margin: 3rem 0;
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  align-items: start;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    margin: 2rem 0;
+    padding: 1rem;
+  }
+}
+
+.heritage-image-container {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+  @media (max-width: 968px) {
+    max-width: 400px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+.heritage-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.heritage-image-cmf {
+  object-fit: cover;
+  object-position: center 30%;
+  height: 400px;
+  width: 100%;
+  max-height: 400px;
+  
+  @media (max-width: 768px) {
+    height: 300px;
+    max-height: 300px;
+  }
+}
+
+// Conteneur spécifique pour l'image cmf avec overflow pour masquer les bords
+.heritage-image-container-cmf {
+  height: 400px;
+  overflow: hidden;
+  
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+}
+
+.heritage-content {
+  flex: 1;
+}
+
+.heritage-name {
+  font-family: var(--font-logo-fr);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 }
 

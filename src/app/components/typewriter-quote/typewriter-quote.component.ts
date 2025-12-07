@@ -1,4 +1,12 @@
-import { Component, OnInit, OnDestroy, signal, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  signal,
+  AfterViewInit,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface Quote {
@@ -7,14 +15,18 @@ interface Quote {
 }
 
 const QUOTES: Quote[] = [
-  { fr: 'Le vrai succès est de plaire à Allah avant tout', ar: 'النجاح الحقيقي هو إرضاء الله قبل كل شيء' },
-  { fr: 'Celui qui suit les pieux ne s\'égare jamais', ar: 'من تبع الصالحين لا يضل أبدًا' },
-  { fr: 'La prière est la clé du paradis', ar: 'الصلاة مفتاح الجنة' },
-  { fr: 'Aimez-vous pour Allah et vous serez unis éternellement', ar: 'أحبوا في الله تكونوا متحدين أبد الدهر' },
-  { fr: 'La patience dans l\'épreuve est la voie des élus', ar: 'الصبر في البلاء طريق المختارين' },
-  { fr: 'Le savoir sans pratique est comme un arbre sans fruits', ar: 'العلم بلا عمل كشجرة بلا ثمر' },
-  { fr: 'L\'humilité élève l\'âme vers les sommets', ar: 'التواضع يرفع النفس إلى القمم' },
-  { fr: 'Rappelez-vous Allah et Il se souviendra de vous', ar: 'اذكروا الله يذكركم' }
+  {
+    fr: "Des maux de la vie d'ici-bas et de l'au-delà, préserve-nous et accorde-nous de Ta part la paix.",
+    ar: 'من ءافة الدنيا والأخرى يا سلام سلم لنا وهب لنا منك السلام',
+  },
+  {
+    fr: "Et quiconque a l'intention de nous nuire, saisis-le, ô Toi qui tiens toute chose, avant qu'il ne nous atteigne, repousse-le.",
+    ar: 'و من نوى لضرنا فاقبضه يا قابض قبل المجي فاردده',
+  },
+  {
+    fr: "Toi qui contemples avec sagesse le destin de l'indigent, enveloppe-nous de Ta douceur, ô Seigneur, par Ton Nom, Ya Latîf.",
+    ar: 'و قدر بما جرى على الضعيف فالطف به يا رب باسمك اللطيف',
+  },
 ];
 
 @Component({
@@ -22,7 +34,7 @@ const QUOTES: Quote[] = [
   standalone: true,
   imports: [CommonModule],
   templateUrl: './typewriter-quote.component.html',
-  styleUrl: './typewriter-quote.component.scss'
+  styleUrl: './typewriter-quote.component.scss',
 })
 export class TypewriterQuoteComponent implements OnInit, OnDestroy, AfterViewInit {
   currentQuoteIndex = signal(0);
@@ -81,7 +93,7 @@ export class TypewriterQuoteComponent implements OnInit, OnDestroy, AfterViewIni
         this.mutationObserver?.observe(element, {
           childList: true,
           subtree: true,
-          characterData: true
+          characterData: true,
         });
       }
     }, 100);
@@ -97,7 +109,7 @@ export class TypewriterQuoteComponent implements OnInit, OnDestroy, AfterViewIni
     this.isTyping.set(true);
     this.isTypingArabic.set(false);
     const quote = this.currentQuote();
-    
+
     // Reset displayed text
     this.displayedFrench.set('');
     this.displayedArabic.set('');
@@ -114,23 +126,18 @@ export class TypewriterQuoteComponent implements OnInit, OnDestroy, AfterViewIni
         frenchIndex++;
         this.typingInterval = window.setTimeout(typeFrench, typingSpeed);
       } else {
-        // Start typing Arabic after a short pause
+        // Display Arabic text completely after a short pause (no typewriter effect for Arabic)
         setTimeout(() => {
           this.isTypingArabic.set(true);
-          const typeArabic = () => {
-            if (arabicIndex < quote.ar.length) {
-              this.displayedArabic.set(quote.ar.substring(0, arabicIndex + 1));
-              arabicIndex++;
-              this.typingInterval = window.setTimeout(typeArabic, typingSpeed);
-            } else {
-              // Finished typing both texts
-              this.isTyping.set(false);
-              this.isTypingArabic.set(false);
-              this.typingInterval = undefined;
-              this.lastFrenchText = quote.fr; // Sauvegarder le texte original
-            }
-          };
-          typeArabic();
+          // Display the complete Arabic text at once to avoid truncation issues
+          this.displayedArabic.set(quote.ar);
+          // Small delay to show cursor briefly
+          setTimeout(() => {
+            this.isTyping.set(false);
+            this.isTypingArabic.set(false);
+            this.typingInterval = undefined;
+            this.lastFrenchText = quote.fr; // Sauvegarder le texte original
+          }, 300);
         }, 600);
       }
     };
@@ -140,7 +147,7 @@ export class TypewriterQuoteComponent implements OnInit, OnDestroy, AfterViewIni
 
   private startCursorBlink(): void {
     this.cursorInterval = window.setInterval(() => {
-      this.showCursor.update(val => !val);
+      this.showCursor.update((val) => !val);
     }, 500);
   }
 
@@ -149,18 +156,18 @@ export class TypewriterQuoteComponent implements OnInit, OnDestroy, AfterViewIni
       const nextIndex = (this.currentQuoteIndex() + 1) % QUOTES.length;
       this.currentQuoteIndex.set(nextIndex);
       this.currentQuote.set(QUOTES[nextIndex]);
-      
+
       // Clear current typing
       if (this.typingInterval) {
         clearTimeout(this.typingInterval);
         this.typingInterval = undefined;
       }
-      
+
       // Fade out and start typing new quote
       setTimeout(() => {
         this.startTyping();
       }, 300);
-    }, 10000); // 10 seconds
+    }, 13000); // 13 seconds
   }
 
   private clearAllIntervals(): void {
@@ -178,4 +185,3 @@ export class TypewriterQuoteComponent implements OnInit, OnDestroy, AfterViewIni
     }
   }
 }
-
