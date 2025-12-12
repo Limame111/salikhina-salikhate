@@ -28,16 +28,34 @@
   gap: var(--spacing-xs);
 }
 
-.logo-image {
-  height: auto;
-  max-width: 220px;
-  max-height: 88px;
-  object-fit: contain;
+.logo-image-wrapper {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: transparent;
   transition: transform var(--transition-fast);
 
   &:hover {
     transform: scale(1.02);
   }
+}
+
+.logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  background: transparent;
+  border-radius: 50%;
+  // Rend le blanc transparent pour s'intégrer avec le fond du header
+  mix-blend-mode: multiply;
+  // Si multiply assombrit trop, essayez: mix-blend-mode: screen; filter: invert(1);
 }
 
 .logo-text {
@@ -242,9 +260,9 @@
 
 /* Responsive adjustments */
 @include responsive(mobile) {
-  .logo-image {
-    max-width: 140px;
-    max-height: 65px;
+  .logo-image-wrapper {
+    width: 65px;
+    height: 65px;
   }
 
   .logo-text {

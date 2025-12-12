@@ -768,8 +768,16 @@ details[open] .descendant-summary::before {
   max-height: 400px;
   
   @media (max-width: 768px) {
-    height: 300px;
-    max-height: 300px;
+    height: auto;
+    max-height: none;
+    object-position: center top;
+    object-fit: contain;
+    width: 100%;
+  }
+  
+  @media (max-width: 480px) {
+    object-fit: contain;
+    object-position: center top;
   }
 }
 
@@ -779,7 +787,10 @@ details[open] .descendant-summary::before {
   overflow: hidden;
   
   @media (max-width: 768px) {
-    height: 300px;
+    height: auto;
+    overflow: visible;
+    display: flex;
+    align-items: flex-start;
   }
 }
 
